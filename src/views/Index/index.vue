@@ -1,6 +1,9 @@
 <template>
   <div class="index_container">
-    <div class="map_warp">
+    <div class="search_wrap">
+      <Search></Search>
+    </div>
+    <div class="map_wrap">
       <MapContainer></MapContainer>
     </div>
   </div>
@@ -8,10 +11,12 @@
 
 <script>
 import MapContainer from "@/components/MapContainer/MapContainer.vue";
+import Search from "@/components/Search/Search.vue";
 
 export default {
   components: {
-    MapContainer
+    MapContainer,
+    Search
   }
 }
 </script>
@@ -22,9 +27,22 @@ export default {
   height: 100%;
   position: relative;
 
-  .map_warp {
-    width: 100%;
-    height: 100%;
+  .map_wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
   }
+
+  .search_wrap {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 60px;
+    width: 400px;
+  }
+
 }
 </style>
